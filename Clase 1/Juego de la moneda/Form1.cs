@@ -20,7 +20,7 @@ namespace Juego_de_la_moneda
         private void btnJugar_Click(object sender, EventArgs e)
         {
             Random genRandom = new Random((int)DateTime.Now.Ticks);
-            b numRandom = genRandom.Next(0, 1 + 1);
+            int numRandom = genRandom.Next(0, 1 + 1);
 
             if (numRandom == 1){
                 pbxCara.Show();
