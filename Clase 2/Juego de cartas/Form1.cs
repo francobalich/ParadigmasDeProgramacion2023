@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,55 +18,58 @@ namespace Juego_de_cartas
             InitializeComponent();
         }
         // int[] cartas = new int[4];
-        int[] cartas = { 2, 1, 2, 1 };
+        //int[] cartas = { 2, 1, 2, 1 };
         int carta = 0;
-        // int[] cartas = new int[4] { 0, 1, 2, 3 };
+        int[] cartas = new int[4] { 0, 0, 0, 0 };
         private int generarNumeroRandom(int min, int max)
         {
             Random genRandom = new Random((int)DateTime.Now.Ticks);
             int numero = genRandom.Next(min, max + 1);
             return numero;
         }
+        private void cargarCartas()
+        {
+            // 1 = circulo
+            // 2 = triangulo
+
+            for (int i = 0; i < cartas.Length; i++)
+            {
+                int num = generarNumeroRandom(1, 2);
+                cartas[i] = num;
+                Thread.Sleep(50);
+            }
+            carta = generarNumeroRandom(1, 2);
+            if (carta == 1)
+            {
+                lblCartaABuscar.Text = "Con un circulo";
+            }
+            else
+            {
+                lblCartaABuscar.Text = "Con un triangulo";
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             try
             {
-                #region comment
-                //lblCartaABuscar.Text = cartas[4].ToString();
-                // 1 = circulo
-                // 2 = triangulo
-                /*
-                for(int i =0; i < cartas.Length; i++)
-                {
-                    int num = generarNumeroRandom(1, 2);
-                    cartas[i] = num;
-                }*/
-
-                //string msg = "";
-                /*
-                for (int i = 0; i < cartas.Length; i++)
-                {
-                    msg = msg + cartas[i].ToString() + ", ";
-                    
-                }*/
-                //MessageBox.Show(msg);
-                #endregion comment
-
-                carta = generarNumeroRandom(1, 2);
-                if (carta == 1)
-                {
-                    lblCartaABuscar.Text = "Con un circulo";
-                }
-                else
-                {
-                    lblCartaABuscar.Text = "Con un triangulo";
-                }
+                cargarCartas();
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void reset()
+        {
+            pbxCartaA.Show();
+            pbxCartaB.Show();
+            pbxCartaC.Show();
+            pbxCartaD.Show();
+            cargarCartas();
+
+            //pbxTriangulo.Hide();
+            //pbxCirculo.Hide();
         }
         private void mostrarResultado(int valor)
         {
@@ -93,16 +97,7 @@ namespace Juego_de_cartas
                 pbxTriangulo.Location = posicion;
             }
         }
-        private void reset()
-        {
-            pbxCartaA.Show();
-            pbxCartaB.Show();
-            pbxCartaC.Show();
-            pbxCartaD.Show();
-
-            //pbxTriangulo.Hide();
-            //pbxCirculo.Hide();
-        }
+        
         private void pbxCartaA_Click(object sender, EventArgs e)
         {
             int valor = cartas[0];
