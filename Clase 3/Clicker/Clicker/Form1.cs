@@ -23,7 +23,7 @@ namespace Clicker
 
         private void initGame()
         {
-            game.InitGame();
+            game.initGame();
             lblHealth.Text = "Vida: " + game.Cubo.ActualLife.ToString();
             lblDamage.Text = "Daño: " + game.Damage.ToString();
             pbxEnemy.Show();
@@ -31,7 +31,7 @@ namespace Clicker
         }
         private void makeDamage()
         {
-            game.MakeDamage();
+            game.makeDamage();
 
             if (game.Cubo.ActualLife > 0)
             {

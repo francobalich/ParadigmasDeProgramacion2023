@@ -29,12 +29,12 @@ namespace Clicker
             Random genRandom = new Random((int)DateTime.Now.Ticks);
             Damage = genRandom.Next(500, 5000 + 1);
         }
-        public void InitGame()
+        public void initGame()
         {
             cubo = new Objeto();
         }
 
-        public void MakeDamage()
+        public void makeDamage()
         {
             if (cubo.ActualLife > 0)
             {

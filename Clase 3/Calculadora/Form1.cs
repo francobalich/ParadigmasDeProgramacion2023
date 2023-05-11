@@ -24,7 +24,7 @@ namespace Calculadora
             {
                 int primerEntrada = Convert.ToInt32(txtPrimerEntrada.Text);
                 int segundaEntrada = Convert.ToInt32(txtSegundaEntrada.Text);
-                int resultado = calculadora.Sumar(primerEntrada, segundaEntrada);
+                int resultado = calculadora.sumar(primerEntrada, segundaEntrada);
 
                 lblResultado.Text = resultado.ToString();
             }
@@ -38,7 +38,7 @@ namespace Calculadora
         {
             try
             {
-                int resultado = calculadora.Restar(txtPrimerEntrada.Text,txtSegundaEntrada.Text);
+                int resultado = calculadora.restar(txtPrimerEntrada.Text,txtSegundaEntrada.Text);
                 lblResultado.Text = resultado.ToString();
             }
             catch (Exception ex)
@@ -51,7 +51,7 @@ namespace Calculadora
         {
             try
             {
-                lblResultado.Text = calculadora.Multiplicar(txtPrimerEntrada, txtSegundaEntrada);
+                lblResultado.Text = calculadora.multiplicar(txtPrimerEntrada, txtSegundaEntrada);
             }
             catch (Exception ex)
             {
@@ -61,12 +61,12 @@ namespace Calculadora
 
         private void btnDividir_Click(object sender, EventArgs e)
         {
-            lblResultado.Text= calculadora.Dividir(txtPrimerEntrada, txtSegundaEntrada);
+            lblResultado.Text= calculadora.dividir(txtPrimerEntrada, txtSegundaEntrada);
         }
 
         private void btnPotencia_Click(object sender, EventArgs e)
         {
-            lblResultado.Text = calculadora.Calcular(txtPrimerEntrada, txtSegundaEntrada,"**");
+            lblResultado.Text = calculadora.calcular(txtPrimerEntrada, txtSegundaEntrada,"**");
         }
 
         

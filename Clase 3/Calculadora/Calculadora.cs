@@ -11,24 +11,24 @@ namespace Calculadora
     {
         public Calculadora() { }
 
-        public int Sumar(int primerNum, int segundoNum)
+        public int sumar(int primerNum, int segundoNum)
         {
             return primerNum + segundoNum;
         }
-        public int Restar(string primerNum, string segundoNum)
+        public int restar(string primerNum, string segundoNum)
         {
             int primerEntrada = Convert.ToInt32(primerNum);
             int segundaEntrada = Convert.ToInt32(segundoNum);
             return primerEntrada - segundaEntrada;
         }
-        public string Multiplicar(TextBox primerTxt, TextBox segundoTxt)
+        public string multiplicar(TextBox primerTxt, TextBox segundoTxt)
         {
             int primerEntrada = Convert.ToInt32(primerTxt.Text);
             int segundaEntrada = Convert.ToInt32(segundoTxt.Text);
             string resultado = (primerEntrada * segundaEntrada).ToString();
             return resultado;
         }
-        public string Dividir(TextBox primerTxt, TextBox segundoTxt)
+        public string dividir(TextBox primerTxt, TextBox segundoTxt)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace Calculadora
                 return "No se pudo realizar la operaciòn";
             }
         }
-        public string Calcular(TextBox primerTxt, TextBox segundoTxt, string operacion)
+        public string calcular(TextBox primerTxt, TextBox segundoTxt, string operacion)
         {
             try
             {
