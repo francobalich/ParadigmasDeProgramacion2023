@@ -54,7 +54,6 @@ namespace Calculadora
             this.txtSegundaEntrada.Name = "txtSegundaEntrada";
             this.txtSegundaEntrada.Size = new System.Drawing.Size(202, 38);
             this.txtSegundaEntrada.TabIndex = 1;
-            this.txtSegundaEntrada.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btnSumar
             // 
