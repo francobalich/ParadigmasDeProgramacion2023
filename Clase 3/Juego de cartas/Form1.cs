@@ -13,61 +13,42 @@ namespace Juego_de_cartas
 {
     public partial class Form1 : Form
     {
+        private Game juego = new Game();
+
         public Form1()
         {
             InitializeComponent();
         }
-        // int[] cartas = new int[4];
-        //int[] cartas = { 2, 1, 2, 1 };
-        int carta = 0;
-        int[] cartas = new int[4] { 0, 0, 0, 0 };
-        private int generarNumeroRandom(int min, int max)
-        {
-            Random genRandom = new Random((int)DateTime.Now.Ticks);
-            int numero = genRandom.Next(min, max + 1);
-            return numero;
-        }
-        private void cargarCartas()
-        {
-            // 1 = circulo
-            // 2 = triangulo
-
-            for (int i = 0; i < cartas.Length; i++)
-            {
-                int num = generarNumeroRandom(1, 2);
-                cartas[i] = num;
-                Thread.Sleep(50);
-            }
-            carta = generarNumeroRandom(1, 2);
-            if (carta == 1)
-            {
-                lblCartaABuscar.Text = "Con un circulo";
-            }
-            else
-            {
-                lblCartaABuscar.Text = "Con un triangulo";
-            }
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            try
-            {
-                cargarCartas();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            reset();
         }
         private void reset()
         {
-            pbxCartaA.Show();
-            pbxCartaB.Show();
-            pbxCartaC.Show();
-            pbxCartaD.Show();
-            cargarCartas();
+            try
+            {
+                pbxCartaA.Show();
+                pbxCartaB.Show();
+                pbxCartaC.Show();
+                pbxCartaD.Show();
 
+                juego.cargarCartas();
+
+                if (juego.CartaBuscada.Numero == 1)
+                {
+                    lblCartaABuscar.Text = "Con un circulo";
+                }
+                else
+                {
+                    lblCartaABuscar.Text = "Con un triangulo";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             //pbxTriangulo.Hide();
             //pbxCirculo.Hide();
         }
@@ -75,7 +56,7 @@ namespace Juego_de_cartas
         {
             if(valor!= 0)
             {
-                if (valor == carta)
+                if (valor == juego.CartaBuscada.Numero)
                 {
                     MessageBox.Show("Adivinaste");
                 }
@@ -100,7 +81,7 @@ namespace Juego_de_cartas
         
         private void pbxCartaA_Click(object sender, EventArgs e)
         {
-            int valor = cartas[0];
+            int valor = juego.obtenerCarta(0).Numero;
 
             Point posicion = new Point(pbxCartaA.Location.X, pbxCartaA.Location.Y);
             pbxCartaA.Hide();
@@ -110,8 +91,8 @@ namespace Juego_de_cartas
         }
         private void pbxCartaB_Click(object sender, EventArgs e)
         {
-            int valor = cartas[1];
-            
+            int valor = juego.obtenerCarta(1).Numero;
+
             Point posicion = new Point(pbxCartaB.Location.X, pbxCartaB.Location.Y);
             pbxCartaB.Hide();
             mostrarCarta(valor, posicion);
@@ -120,7 +101,7 @@ namespace Juego_de_cartas
 
         private void pbxCartaC_Click(object sender, EventArgs e)
         {
-            int valor = cartas[2];
+            int valor = juego.obtenerCarta(2).Numero;
             Point posicion = new Point(pbxCartaC.Location.X, pbxCartaC.Location.Y);
             pbxCartaC.Hide();
             mostrarCarta(valor, posicion);
@@ -129,7 +110,7 @@ namespace Juego_de_cartas
 
         private void pbxCartaD_Click(object sender, EventArgs e)
         {
-            int valor = cartas[3];
+            int valor = juego.obtenerCarta(3).Numero;
             Point posicion = new Point(pbxCartaD.Location.X, pbxCartaD.Location.Y);
             pbxCartaD.Hide();
             mostrarCarta(valor, posicion);
