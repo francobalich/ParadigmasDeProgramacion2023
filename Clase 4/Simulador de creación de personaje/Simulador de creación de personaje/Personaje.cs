@@ -21,8 +21,15 @@ namespace Simulador_de_creación_de_personaje
 			this.altura = pAltura;
 			this.profesion = pProfesion;
         }
-
-		public void agregarHobbie(Hobbie pHobbie)
+        ~Personaje()
+        {
+            this.nombre = "";
+            this.edad = 0;
+            this.altura = 0;
+            this.profesion = "";
+            hobbies.Clear();
+        }
+        public void agregarHobbie(Hobbie pHobbie)
 		{
 			hobbies.Add(pHobbie);
 		}
