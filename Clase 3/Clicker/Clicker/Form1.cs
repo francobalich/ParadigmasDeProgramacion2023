@@ -7,54 +7,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.AxHost;
 
 namespace Clicker
 {
     public partial class Form1 : Form
     {
+        private ClickerGame game = new ClickerGame();
+
         public Form1()
         {
             InitializeComponent();
         }
-        public int life = 0;
-        public int actualLife = 0;
-        public int damage = 0;
-
 
         private void initGame()
         {
-            Random genRandom = new Random((int)DateTime.Now.Ticks);
-            life = genRandom.Next(3000, 30000 + 1);
-            actualLife = life;
-            damage = genRandom.Next(500, 5000 + 1);
-            lblHealth.Text = "Vida: " + actualLife.ToString();
-            lblDamage.Text = "Daño: " + damage.ToString();
+            game.InitGame();
+            lblHealth.Text = "Vida: " + game.Cubo.ActualLife.ToString();
+            lblDamage.Text = "Daño: " + game.Damage.ToString();
             pbxEnemy.Show();
-            pbxEnemy.Size = new Size(250,250);
+            pbxEnemy.Size = new Size(250, 250);
         }
-
         private void makeDamage()
         {
-            if (actualLife > 0)
+            game.MakeDamage();
+
+            if (game.Cubo.ActualLife > 0)
             {
-                actualLife = actualLife - damage;
-                if (actualLife > 0)
-                {
-                    lblHealth.Text = "Vida: " + actualLife.ToString();
-                    float scale = (float)actualLife / (float)life;
-                    SizeF size = new SizeF(scale, scale);
-                    pbxEnemy.Scale(size);
-                }
-                else
-                {
-                    lblHealth.Text = "Vida: 0";
-                    pbxEnemy.Hide();
-                }
+                lblHealth.Text = "Vida: " + game.Cubo.ActualLife.ToString();
+                float scale = (float)game.Cubo.ActualLife / (float)game.Cubo.Life;
+                SizeF size = new SizeF(scale, scale);
+                pbxEnemy.Scale(size);
             }
             else
             {
-                MessageBox.Show("¡Felicidades lograste picar el cubo!", "Lo lograste", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblHealth.Text = "Vida: 0";
+                pbxEnemy.Hide();
             }
         }
 
