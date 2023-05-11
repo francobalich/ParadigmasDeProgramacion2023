@@ -12,51 +12,37 @@ namespace Duelo_de_suerte_C
 {
     public partial class Form1 : Form
     {
+        private Game game = new Game();
         public Form1()
         {
             InitializeComponent();
         }
-        int numA = 0;
-        int numB = 0;
-        private int generarNumeroRandom(int min,int max)
-        {
-            Random genRandom = new Random((int)DateTime.Now.Ticks);
-            int numero = genRandom.Next(min, max + 1);
-            return numero;
-        }
         private void mostrarGanador()
         {
-            if (numA>0 && numB>0)
+            game.determinarGanador();
+            if (game.NumA > 0 && game.NumB > 0)
             {
-                if (numA > numB)
-                {
-                    MessageBox.Show("Gano el Jugador A", "Resultado del juego", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else if (numA == numB)
-                {
-                    MessageBox.Show("Fue un empate", "Resultado del juego", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Gano el Jugador B", "Resultado del juego", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                numA = 0;
-                numB = 0;
-                lblNumA.Text = numA.ToString();
-                lblNumB.Text = numB.ToString();
+                lblNumA.Text = game.NumA.ToString();
+                lblNumB.Text = game.NumB.ToString();
+                game.resetJugadores();  
+            }
+            else
+            {
+                lblNumA.Text = game.NumA.ToString();
+                lblNumB.Text = game.NumB.ToString();
             }
         }
         private void btnJugadorA_Click(object sender, EventArgs e)
         {
-            numA = generarNumeroRandom(0, 10);
-            lblNumA.Text = numA.ToString();
+            game.cargarJugadorA(0, 10);
+            lblNumA.Text = game.NumA.ToString();
             mostrarGanador();
         }
 
         private void btnJugadorB_Click(object sender, EventArgs e)
         {
-            numB = generarNumeroRandom(1, 10);
-            lblNumB.Text = numB.ToString();
+            game.cargarJugadorB(0, 10);
+            lblNumB.Text = game.NumB.ToString();
             mostrarGanador();
         }
     }
