@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Equipamiento_de_personajes.Properties
+namespace Creador_de_personajes.Properties
 {
 
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Equipamiento_de_personajes
+namespace Creador_de_personajes
 {
     internal static class Program
     {

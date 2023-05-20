@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equipamiento de personajes", "Equipamiento de personajes\Equipamiento de personajes.csproj", "{4970F950-B11C-499F-8C10-F46D9C719156}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creador de personajes", "Creador de personajes\Creador de personajes.csproj", "{2149F919-DFBE-4782-AAD5-1E721F39D7EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4970F950-B11C-499F-8C10-F46D9C719156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4970F950-B11C-499F-8C10-F46D9C719156}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4970F950-B11C-499F-8C10-F46D9C719156}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4970F950-B11C-499F-8C10-F46D9C719156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2149F919-DFBE-4782-AAD5-1E721F39D7EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2149F919-DFBE-4782-AAD5-1E721F39D7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2149F919-DFBE-4782-AAD5-1E721F39D7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2149F919-DFBE-4782-AAD5-1E721F39D7EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {FAADD0D5-AA26-4B39-BE4C-4BCBC6283C35}
+		SolutionGuid = {3CE483F1-3E8A-4EBE-80CD-610795D45048}
 	EndGlobalSection
 EndGlobal
