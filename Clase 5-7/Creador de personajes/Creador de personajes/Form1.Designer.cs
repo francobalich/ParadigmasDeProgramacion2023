@@ -28,64 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCrearPersonajes = new System.Windows.Forms.Button();
-            this.btnVerPersonaje = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnCrearHerrero = new System.Windows.Forms.Button();
+            this.btnVerPersonajes = new System.Windows.Forms.Button();
+            this.btnGuerrero = new System.Windows.Forms.Button();
+            this.btnCrearMago = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnCrearPersonajes
+            // btnCrearHerrero
             // 
-            this.btnCrearPersonajes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearPersonajes.Location = new System.Drawing.Point(12, 275);
-            this.btnCrearPersonajes.Name = "btnCrearPersonajes";
-            this.btnCrearPersonajes.Size = new System.Drawing.Size(233, 59);
-            this.btnCrearPersonajes.TabIndex = 0;
-            this.btnCrearPersonajes.Text = "Crear personaje";
-            this.btnCrearPersonajes.UseVisualStyleBackColor = true;
-            this.btnCrearPersonajes.Click += new System.EventHandler(this.btnCrearPersonajes_Click);
+            this.btnCrearHerrero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearHerrero.Location = new System.Drawing.Point(12, 142);
+            this.btnCrearHerrero.Name = "btnCrearHerrero";
+            this.btnCrearHerrero.Size = new System.Drawing.Size(233, 59);
+            this.btnCrearHerrero.TabIndex = 0;
+            this.btnCrearHerrero.Text = "Crear herrero";
+            this.btnCrearHerrero.UseVisualStyleBackColor = true;
+            this.btnCrearHerrero.Click += new System.EventHandler(this.btnCrearHerrero_Click);
             // 
-            // btnVerPersonaje
+            // btnVerPersonajes
             // 
-            this.btnVerPersonaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerPersonaje.Location = new System.Drawing.Point(12, 340);
-            this.btnVerPersonaje.Name = "btnVerPersonaje";
-            this.btnVerPersonaje.Size = new System.Drawing.Size(233, 59);
-            this.btnVerPersonaje.TabIndex = 1;
-            this.btnVerPersonaje.Text = "Ver personaje";
-            this.btnVerPersonaje.UseVisualStyleBackColor = true;
-            this.btnVerPersonaje.Click += new System.EventHandler(this.btnVerPersonaje_Click);
+            this.btnVerPersonajes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerPersonajes.Location = new System.Drawing.Point(12, 207);
+            this.btnVerPersonajes.Name = "btnVerPersonajes";
+            this.btnVerPersonajes.Size = new System.Drawing.Size(233, 59);
+            this.btnVerPersonajes.TabIndex = 1;
+            this.btnVerPersonajes.Text = "Ver personajes";
+            this.btnVerPersonajes.UseVisualStyleBackColor = true;
+            this.btnVerPersonajes.Click += new System.EventHandler(this.btnVerPersonajes_Click);
             // 
-            // pictureBox1
+            // btnGuerrero
             // 
-            this.pictureBox1.Image = global::Creador_de_personajes.Properties.Resources.robot;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(206, 257);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.btnGuerrero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuerrero.Location = new System.Drawing.Point(12, 77);
+            this.btnGuerrero.Name = "btnGuerrero";
+            this.btnGuerrero.Size = new System.Drawing.Size(233, 59);
+            this.btnGuerrero.TabIndex = 2;
+            this.btnGuerrero.Text = "Crear guerrero";
+            this.btnGuerrero.UseVisualStyleBackColor = true;
+            this.btnGuerrero.Click += new System.EventHandler(this.btnGuerrero_Click);
+            // 
+            // btnCrearMago
+            // 
+            this.btnCrearMago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearMago.Location = new System.Drawing.Point(12, 12);
+            this.btnCrearMago.Name = "btnCrearMago";
+            this.btnCrearMago.Size = new System.Drawing.Size(233, 59);
+            this.btnCrearMago.TabIndex = 3;
+            this.btnCrearMago.Text = "Crear mago";
+            this.btnCrearMago.UseVisualStyleBackColor = true;
+            this.btnCrearMago.Click += new System.EventHandler(this.btnCrearMago_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 412);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnVerPersonaje);
-            this.Controls.Add(this.btnCrearPersonajes);
+            this.ClientSize = new System.Drawing.Size(258, 278);
+            this.Controls.Add(this.btnCrearMago);
+            this.Controls.Add(this.btnGuerrero);
+            this.Controls.Add(this.btnVerPersonajes);
+            this.Controls.Add(this.btnCrearHerrero);
             this.Name = "Form1";
             this.Text = "Creador de personajes";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnCrearPersonajes;
-        private System.Windows.Forms.Button btnVerPersonaje;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnCrearHerrero;
+        private System.Windows.Forms.Button btnVerPersonajes;
+        private System.Windows.Forms.Button btnGuerrero;
+        private System.Windows.Forms.Button btnCrearMago;
     }
 }
 
