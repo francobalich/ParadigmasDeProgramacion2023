@@ -16,5 +16,15 @@ namespace Creador_de_personajes
         {
             InitializeComponent();
         }
+
+        private void btnCrearPersonajes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVerPersonaje_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
