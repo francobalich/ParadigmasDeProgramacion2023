@@ -11,9 +11,10 @@ namespace Creador_de_personajes
         private string nombre="";
         private string profesion="Guerrero";
 
-        public Guerrero(string pNombre)
+        public Guerrero(string pNombre, Item pItem)
         {
             this.nombre = pNombre;
+            this.ItemPoseido = pItem;
         }
 
         public override string Nombre { get => this.nombre; set => this.nombre=value; }

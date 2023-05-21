@@ -10,10 +10,11 @@ namespace Creador_de_personajes
     {
         public abstract string Nombre { get; set; }
         public abstract string Profesion { get; }
+        public Item ItemPoseido { get; set; }
 
         public override string ToString()
         {
-            return $"{Nombre} ({Profesion})";
+            return $"{Nombre} ({Profesion}) con {ItemPoseido}";
         }
     }
 }

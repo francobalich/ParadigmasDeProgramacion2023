@@ -25,7 +25,7 @@ namespace Creador_de_personajes
             try
             {
                 string nombre = Interaction.InputBox("Ingrese el nombre del mago");
-                personajes.Add(new Mago(nombre));
+                personajes.Add(new Mago(nombre, new Herramienta("Baston")));
             }
             catch (Exception ex)
             {
@@ -38,7 +38,7 @@ namespace Creador_de_personajes
             try
             {
                 string nombre = Interaction.InputBox("Ingrese el nombre del guerrero");
-                personajes.Add(new Guerrero(nombre));
+                personajes.Add(new Guerrero(nombre, new Arma("Espada")));
             }
             catch (Exception ex)
             {
@@ -52,7 +52,7 @@ namespace Creador_de_personajes
             try
             {
                 string nombre = Interaction.InputBox("Ingrese el nombre del herrero");
-                personajes.Add(new Herrero(nombre));
+                personajes.Add(new Herrero(nombre, new Comida("Pizza")));
             }
             catch (Exception ex)
             {
